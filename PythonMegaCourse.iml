@@ -2,11 +2,17 @@
 <module type="GENERAL_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
+    <annotation-paths>
+      <root url="file://$MODULE_DIR$/../../vorin/python-3.11.2-embed-win32" />
+      <root url="file://$MODULE_DIR$/../../vorin/python-3.11.2-embed-win32/PySimpleGUI-4.60.4" />
+    </annotation-paths>
     <javadoc-paths>
       <root url="file://$MODULE_DIR$/../../vorin/python-3.11.2-embed-win32" />
     </javadoc-paths>
-    <content url="file://$MODULE_DIR$" />
-    <orderEntry type="jdk" jdkName="Python 3.9 (vorin)" jdkType="Python SDK" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/venv" />
+    </content>
+    <orderEntry type="jdk" jdkName="Python 3.11 (ExitoPolls)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>

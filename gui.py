@@ -1,15 +1,25 @@
-import PySimpleGUI as sg 
+import functions
+import PySimpleGUI as sg
 
-label1 = sg.Text("Select files to compress:")
-input1 = sg.Input()
-choose_button1 = sg.FileBrowse("Choose")
+label = sg.Text("Type in a to-do:")
+input_box = sg.InputText(tooltip="Enter todo", key="todo")
+add_button = sg.Button("Add")
 
-label2 = sg.Text("Select destination folder:")
-input2 = sg.Input()
-choose_button2 = sg.FileBrowse("Choose")
+window = sg.Window("My To-do App",
+                   layout=[[label, [input_box, add_button]]],
+                   font=('Helvetica', 20))
 
-window = sg.Window("File Compressor", 
-                   layout=[[label1, input1, choose_button1],
-                           [label2, input2, choose_button2]])
-window.read()
+while True:
+    event, values = window.read()
+    print(event)
+    print(values)
+    match event:
+        case "Add":
+            todos = functions.get_todos()
+            new_todo = values['todo'] + "\n"
+            todos.append(new_todo)
+            functions.write_todos(todos)
+        case sg.WIN_CLOSED:
+            break
+
 window.close()
